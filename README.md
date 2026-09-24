@@ -1,4 +1,4 @@
-## BEYOND SPATIAL BENCHMARKS: FROM SPATIAL REASONING TO NAVIGATION
+### BEYOND SPATIAL BENCHMARKS: FROM SPATIAL REASONING TO NAVIGATION
 Coming soon...
 
 Not fake news, swear by my doctoral degree. It won't take more than **one month**.
