@@ -95,14 +95,16 @@ export RUN_DIR="$NAV_RESULTS/eval/qwen3-vl-8b/$DATASET"
 
 For a newly trained Qwen3 model, pass its `compose/final_adapter` and `stop_merged` directories with `--move-checkpoint` and `--stop-checkpoint`. For InternVL3, change the architecture and base model and use `--stop-threshold 0.0`. Each run writes `metrics.json` and `run_config.json` to `RUN_DIR`.
 
-## Reference results
+## Recorded results
+
+The table includes both evaluation settings. `Pretrained checkpoint` means the released model was loaded directly for evaluation. `Retrained checkpoint` means the Qwen3-VL-8B model was trained with the commands above and then evaluated.
 
 Results are percentages reported as `SR / SPL`:
 
-| checkpoint | HM3D-v1 | HM3D-v2 | MP3D |
-|---|---:|---:|---:|
-| Qwen3-VL-8B, fresh 8-GPU training | 60.25 / 30.47 | 76.80 / 34.86 | 48.43 / 20.47 |
-| InternVL3-8B, published checkpoint | 57.80 / 31.22 | 72.40 / 34.66 | 42.23 / 19.53 |
+| evaluation setting | checkpoint | HM3D-v1 | HM3D-v2 | MP3D |
+|---|---|---:|---:|---:|
+| Retrained checkpoint (8-GPU full training) | Qwen3-VL-8B | 60.25 / 30.47 | 76.80 / 34.86 | 48.43 / 20.47 |
+| Pretrained checkpoint (loaded directly) | InternVL3-8B | 57.80 / 31.22 | 72.40 / 34.66 | 42.23 / 19.53 |
 
 ## Repository layout
 
