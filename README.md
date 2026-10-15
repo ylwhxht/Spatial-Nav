@@ -7,7 +7,7 @@
 </div>
 
 <div align="center">
-  <img src="figures/teaser.png" width="700" alt="Spatial-Nav overview" />
+  <img src="figures/teaser.png" width="600" alt="Spatial-Nav overview" />
 </div>
 
 
