@@ -1,4 +1,4 @@
-﻿# Spatial-Nav
+# Spatial-Nav
 
 <div align="center">
   <img src="figures/teaser.png" width="900" alt="Spatial-Nav overview" />
@@ -10,17 +10,17 @@
 
 </div>
 
-Spatial-Nav studies how spatial supervision transfers from vision-language benchmarks to embodied navigation. The release contains the Spatial-Nav-100K data interface, the Qwen3-VL-8B end-to-end training chain, and the checkpoint evaluator for Qwen3-VL-8B and InternVL3-8B.
-
-The complete reproduction protocol, pinned environments, commands, recorded logs, and metrics are in [REPRODUCTION.md](REPRODUCTION.md). The original project figure is shown above; paper, dataset, and model files are linked in the badges.
+Spatial-Nav studies how spatial supervision transfers from vision-language benchmarks to embodied navigation. This release includes the Spatial-Nav-100K training interface, Qwen3-VL-8B training code, and checkpoint evaluation code for Qwen3-VL-8B and InternVL3-8B.
 
 ## Quick Start
 
-Run the commands below from a Linux x86-64 host with eight visible GPUs. Large base-model weights, simulator scenes, navigation meshes, and training images are downloaded separately and are not stored in GitHub.
+The training data is released as Spatial-Nav-100K (about 100K spatial instruction examples). Evaluation uses the HM3D-v1, HM3D-v2, and MP3D navigation sets. Scene files, object-navigation annotations, navigation meshes, base-model weights, and training images are downloaded separately because of their size or license.
 
-### 1. Prepare the dataset and checkpoints
+The commands below assume a Linux x86-64 machine with eight visible GPUs.
 
-Create a writable cache and download the released dataset/checkpoint bundle:
+### 1. Prepare data and models
+
+Choose writable storage and download the released dataset and checkpoint metadata:
 
 ```bash
 export NAV_CACHE=/path/to/spatial-nav-cache
@@ -34,11 +34,11 @@ export SPATIAL_NAV_CHECKPOINT_REPO=hx24/spatial-nav-models
 bash tools/download_hf_assets.sh
 ```
 
-For evaluation, also prepare the licensed HM3D-v1, HM3D-v2, or MP3D scene/objectnav assets. MP3D evaluation additionally needs the validation navmeshes; see [REPRODUCTION.md](REPRODUCTION.md#3-checkpoint-evaluation).
+For evaluation, also place the licensed HM3D-v1, HM3D-v2, or MP3D scene/objectnav assets at local paths. MP3D additionally needs its validation navigation meshes.
 
-### 2. Create the pinned environments
+### 2. Create the environments
 
-The helper creates separate training, simulator-worker, and model-serving environments from the files under `environment/`:
+The helper creates separate environments for training, simulator workers, and model serving:
 
 ```bash
 tools/bootstrap_envs.sh --prefix "$NAV_CACHE/envs"
@@ -50,11 +50,11 @@ export SERVE_PY="$NAV_CACHE/envs/serve/bin/python"
   --data "$SPATIAL_NAV_DATA_ROOT" --verify-only
 ```
 
-The tested stack and exact package pins are recorded in [REPRODUCTION.md](REPRODUCTION.md) and `requirements-*.txt`.
+The package lists are in `requirements-*.txt`; the environment files contain the simulator and serving setup.
 
-### 3. Train Qwen3-VL-8B from scratch
+### 3. Train Qwen3-VL-8B
 
-Run the full six-stage chain on GPUs 0–7:
+Run the complete training chain on GPUs 0–7:
 
 ```bash
 "$TRAIN_PY" codes/scripts/train.py \
@@ -65,11 +65,11 @@ Run the full six-stage chain on GPUs 0–7:
   --stage all --gpus 8 --gpu-ids 0,1,2,3,4,5,6,7
 ```
 
-`--stage all` runs Foundation, Move no-KD, Move OPD, adapter composition, Stop, and merged Stop. The resulting Move and Stop checkpoints can be passed directly to the evaluator. Phase settings and recorded training logs are listed in [REPRODUCTION.md](REPRODUCTION.md#2-qwen3-vl-8b-training).
+The command runs the Foundation, Move, and Stop stages and writes the adapters and merged checkpoints below `NAV_RESULTS`.
 
 ### 4. Evaluate a checkpoint
 
-Use one command per dataset (`hm3d_v1`, `hm3d_v2`, or `mp3d`). The verified layout starts four Move servers on GPUs 0–3, four Stop servers on GPUs 4–7, and ten simulator workers per GPU:
+Set `DATASET` to `hm3d_v1`, `hm3d_v2`, or `mp3d`. The standard layout uses four Move servers on GPUs 0–3, four Stop servers on GPUs 4–7, and ten workers per GPU:
 
 ```bash
 export DATASET=hm3d_v2
@@ -93,26 +93,24 @@ export RUN_DIR="$NAV_RESULTS/eval/qwen3-vl-8b/$DATASET"
   --worker-gpu-device-id 0 --stop-threshold 2.0
 ```
 
-For a freshly trained Qwen3 run, replace `--checkpoint-root` with `--move-checkpoint` and `--stop-checkpoint` pointing to the two output directories. For InternVL3, change `--architecture`, `--base-model`, checkpoint root, and use `--stop-threshold 0.0`. The evaluator writes `metrics.json` and `run_config.json` under `RUN_DIR`.
+For a newly trained Qwen3 model, pass its `compose/final_adapter` and `stop_merged` directories with `--move-checkpoint` and `--stop-checkpoint`. For InternVL3, change the architecture and base model and use `--stop-threshold 0.0`. Each run writes `metrics.json` and `run_config.json` to `RUN_DIR`.
 
-## Recorded results
+## Reference results
 
-The released full-split results are percentages (`SR / SPL`):
+Results are percentages reported as `SR / SPL`:
 
 | checkpoint | HM3D-v1 | HM3D-v2 | MP3D |
 |---|---:|---:|---:|
 | Qwen3-VL-8B, fresh 8-GPU training | 60.25 / 30.47 | 76.80 / 34.86 | 48.43 / 20.47 |
 | InternVL3-8B, published checkpoint | 57.80 / 31.22 | 72.40 / 34.66 | 42.23 / 19.53 |
 
-The corresponding logs and JSON metrics are under `reproduction/`. Checkpoint provenance and SHA-256 records are in [CHECKPOINTS.md](CHECKPOINTS.md).
-
 ## Repository layout
 
-- `codes/`: training, serving, evaluation, and simulator preparation scripts.
-- `environment/`: pinned environment definitions for training, serving, and workers.
-- `tools/`: Hugging Face download/verification and MP3D preparation helpers.
-- `reproduction/`: compact run metadata, logs, and recorded metrics.
-- `checkpoint_configs/`, `checkpoints/`: public checkpoint metadata and tokenizer/config files; large weights remain on Hugging Face.
+- `codes/`: training, model serving, evaluation, and simulator preparation.
+- `environment/`: environment definitions for training, serving, and workers.
+- `tools/`: dataset/checkpoint download and MP3D preparation helpers.
+- `reproduction/`: recorded commands, logs, metrics, and timing notes.
+- `checkpoint_configs/`, `checkpoints/`: public checkpoint configuration and tokenizer files; large weights remain on Hugging Face.
 - `tests/`: lightweight integrity and command checks.
 
 ## Citation
@@ -126,4 +124,4 @@ The corresponding logs and JSON metrics are under `reproduction/`. Checkpoint pr
 }
 ```
 
-See [README_CN.md](README_CN.md) for a concise Chinese entry point.
+See [README_CN.md](README_CN.md) for a concise Chinese entry point. For detailed phase settings, observed training/evaluation time, output files, and reproduction results, see [REPRODUCTION.md](REPRODUCTION.md).
