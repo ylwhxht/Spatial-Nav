@@ -117,6 +117,10 @@ Results are percentages reported as `SR / SPL`:
 - `checkpoint_configs/`, `checkpoints/`: public checkpoint configuration and tokenizer files; large weights remain on Hugging Face.
 - `tests/`: lightweight integrity and command checks.
 
+## Other instructions
+
+See [README_CN.md](README_CN.md) for a concise Chinese entry point. For detailed phase settings, observed training/evaluation time, output files, and reproduction results, see [REPRODUCTION.md](REPRODUCTION.md).
+
 ## Citation
 
 ```bibtex
@@ -128,4 +132,4 @@ Results are percentages reported as `SR / SPL`:
 }
 ```
 
-See [README_CN.md](README_CN.md) for a concise Chinese entry point. For detailed phase settings, observed training/evaluation time, output files, and reproduction results, see [REPRODUCTION.md](REPRODUCTION.md).
+
