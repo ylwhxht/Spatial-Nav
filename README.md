@@ -1,4 +1,4 @@
-# Spatial-Nav
+# Beyond Spatial Benchmarks: From Spatial Reasoning to Navigation
 
 <div align="center">
   <img src="figures/teaser.png" width="900" alt="Spatial-Nav overview" />
