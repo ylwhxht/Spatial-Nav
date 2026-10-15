@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv)](https://arxiv.org/abs/2609.29934) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface)](https://huggingface.co/datasets/hx24/spatial-nav-100k-dataset) [![Models](https://img.shields.io/badge/Models-HuggingFace-yellow?logo=huggingface)](https://huggingface.co/hx24/spatial-nav-models)
+[![Paper](https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv)](https://arxiv.org/abs/2609.29934) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-purple?logo=huggingface)](https://huggingface.co/datasets/hx24/spatial-nav-100k-dataset) [![Models](https://img.shields.io/badge/Models-HuggingFace-blue?logo=huggingface)](https://huggingface.co/hx24/spatial-nav-models)
 
 </div>
 
