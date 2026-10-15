@@ -1,14 +1,16 @@
 # Beyond Spatial Benchmarks: From Spatial Reasoning to Navigation
 
 <div align="center">
-  <img src="figures/teaser.png" width="900" alt="Spatial-Nav overview" />
-</div>
-
-<div align="center">
 
 [![Paper](https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv)](https://arxiv.org/abs/2609.29934) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface)](https://huggingface.co/datasets/hx24/spatial-nav-100k-dataset) [![Models](https://img.shields.io/badge/Models-HuggingFace-yellow?logo=huggingface)](https://huggingface.co/hx24/spatial-nav-models)
 
 </div>
+
+<div align="center">
+  <img src="figures/teaser.png" width="900" alt="Spatial-Nav overview" />
+</div>
+
+
 
 Spatial-Nav studies how spatial supervision transfers from vision-language benchmarks to embodied navigation. This release includes the Spatial-Nav-100K training interface, Qwen3-VL-8B training code, and checkpoint evaluation code for Qwen3-VL-8B and InternVL3-8B.
 
