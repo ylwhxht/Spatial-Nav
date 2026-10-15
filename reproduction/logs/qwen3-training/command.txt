@@ -1,0 +1,8 @@
+# Verified 8-GPU Qwen3-VL-8B run
+TRAIN_PY=/home/dataset-local/runtime/spatial_nav_repro_train022_20261012/bin/python
+$TRAIN_PY codes/scripts/train.py \
+  --architecture qwen3-vl-8b \
+  --base-model /home/dataset-local/cache/qwen3-vl-8b-instruct \
+  --data datasets \
+  --output /home/dataset-local/tmp/spatial-nav-train-qwen3-vl-8b-full-8gpu-20261015 \
+  --stage all --gpus 8 --gpu-ids 0,1,2,3,4,5,6,7

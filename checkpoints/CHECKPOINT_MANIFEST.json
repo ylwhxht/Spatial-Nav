@@ -1,0 +1,211 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-10-10T00:00:00Z",
+  "description": "Official checkpoint manifest for Spatial-Nav-100K paper reproduction",
+  "checkpoints": {
+    "qwen3-vl-8b": {
+      "model_family": "Qwen3-VL-8B",
+      "base_model": {
+        "name": "Qwen/Qwen3-VL-8B-Instruct",
+        "snapshot": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+        "source": "HuggingFace"
+      },
+      "training_run": {
+        "name": "Formal R1",
+        "identifier": "retrain_75sr_32p29spl_20260817",
+        "source": "Release checkpoint provenance; the original training path is intentionally not published"
+      },
+      "evaluation_results": {
+        "stop_threshold": 2.0,
+        "datasets": {
+          "hm3d_v0.2": {
+            "success_rate": 0.7740,
+            "spl": 0.3607,
+            "episodes": 1000
+          },
+          "hm3d_v0.1": {
+            "success_rate": 0.6020,
+            "spl": 0.3073,
+            "episodes": 2000
+          },
+          "mp3d": {
+            "success_rate": 0.4774,
+            "spl": 0.2071,
+            "episodes": 2195
+          }
+        }
+      },
+      "components": {
+        "foundation": {
+          "path": "qwen3-vl-8b/foundation",
+          "size_mb": 672,
+          "rank": 64,
+          "alpha": 128,
+          "training_samples": 40000,
+          "seed": 20260728,
+          "sha256": "b310a127..."
+        },
+        "move_no_kd": {
+          "path": "qwen3-vl-8b/move_no_kd",
+          "size_mb": 676,
+          "rank": 64,
+          "alpha": 128,
+          "training_samples": 40000,
+          "training_samples_historical_effective": 29000,
+          "seed": 20260808,
+          "sha256": "cd5a8093..."
+        },
+        "move_opd": {
+          "path": "qwen3-vl-8b/move_opd",
+          "size_mb": 339,
+          "rank": 64,
+          "alpha": 128,
+          "training_samples": 13317,
+          "training_samples_historical_effective": 13000,
+          "seed": 20260807,
+          "sha256": "7718342d..."
+        },
+        "move_composed": {
+          "path": "qwen3-vl-8b/move_composed",
+          "size_mb": 1400,
+          "rank": 128,
+          "alpha": 256,
+          "description": "Composed adapter: Foundation + Move noKD + Move OPD",
+          "sha256": "330f86c3..."
+        },
+        "stop": {
+          "path": "qwen3-vl-8b/stop",
+          "size_mb": 672,
+          "rank": 64,
+          "alpha": 128,
+          "training_samples": 14125,
+          "training_samples_historical_effective": 14000,
+          "seed": 20260809,
+          "sha256": "6ba37c3d..."
+        }
+      },
+      "total_size_gb": 3.7,
+      "paper_table": "Multi-seed training results (Table 1)"
+    },
+    "internvl3-8b": {
+      "model_family": "InternVL3-8B",
+      "base_model": {
+        "name": "OpenGVLab/InternVL3-8B-hf",
+        "snapshot": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+        "source": "HuggingFace"
+      },
+      "training_run": {
+        "name": "SeedL Repaired",
+        "identifier": "seedL_internvl3_8b_repaired_20260913",
+        "source": "Release checkpoint provenance; the original training path is intentionally not published"
+      },
+      "evaluation_results": {
+        "stop_threshold": 0.0,
+        "datasets": {
+          "hm3d_v0.2": {
+            "success_rate": 0.7170,
+            "spl": 0.3462,
+            "episodes": 1000
+          },
+          "hm3d_v0.1": {
+            "success_rate": 0.5795,
+            "spl": 0.3113,
+            "episodes": 2000
+          },
+          "mp3d": {
+            "success_rate": 0.4205,
+            "spl": 0.1968,
+            "episodes": 2195
+          }
+        }
+      },
+      "components": {
+        "foundation": {
+          "path": "internvl3-8b/foundation",
+          "size_mb": 622,
+          "rank": 64,
+          "alpha": 128,
+          "training_samples": 40000,
+          "sha256": "9d9b320932212ba72af522085dcfc1bd97771b328e56d911e8e587b3c41e0b3e"
+        },
+        "move_composed": {
+          "path": "internvl3-8b/move_composed",
+          "size_mb": 1300,
+          "rank": 128,
+          "alpha": 256,
+          "description": "Composed adapter: Foundation + Move noKD + Move OPD",
+          "source_adapters_bundled": false,
+          "sha256": "e55900b38b7e1279fa26eb493f572ffbb69902850e08d29688fc06f1d965fcea"
+        },
+        "stop": {
+          "path": "internvl3-8b/stop",
+          "size_mb": 622,
+          "rank": 64,
+          "alpha": 128,
+          "training_samples": 14125,
+          "training_samples_historical_effective": 14000,
+          "description": "Cumulative stop adapter (includes foundation)",
+          "sha256": "84b6cac6cdb5a922299624789a450e86cdfca23fb4ef8e4fc27fbf47c1104258"
+        },
+        "stop_merged": {
+          "path": "internvl3-8b/stop_merged",
+          "size_mb": 15000,
+          "description": "Fully merged stop model for vLLM deployment",
+          "shards": 5,
+          "deployment_ready": true,
+          "sha256_manifest_verified": true
+        }
+      },
+      "total_size_gb": 18.0,
+      "paper_table": "Cross-architecture transfer results (Table 2)"
+    }
+  },
+  "usage": {
+    "evaluation_protocol": {
+      "environment": {
+        "simulator": "Habitat-sim",
+        "max_physical_steps": 500,
+        "success_threshold_m": 1.0,
+        "rgb_resolution": "1920x1080",
+        "jpeg_quality": 85
+      },
+      "generation_parameters": {
+        "move": {
+          "max_new_tokens": 24,
+          "temperature": 0,
+          "top_p": 1
+        },
+        "stop": {
+          "max_new_tokens": 16,
+          "temperature": 0,
+          "top_p": 1
+        },
+        "features": {
+          "visible_cot": false,
+          "thinking_tokens": false,
+          "multi_view": false
+        }
+      }
+    },
+    "reproduction_launchers": {
+      "qwen3-vl-8b": {
+        "entrypoint": "codes/scripts/evaluate.py",
+        "architecture": "qwen3-vl-8b",
+        "datasets": ["hm3d_v0.2", "hm3d_v0.1", "mp3d"]
+      },
+      "internvl3-8b": {
+        "entrypoint": "codes/scripts/evaluate.py",
+        "architecture": "internvl3-8b",
+        "datasets": ["hm3d_v0.2", "hm3d_v0.1", "mp3d"],
+        "environment_variable": "VLMNAV_STOP_LOGIT_THRESHOLD=0.0"
+      }
+    }
+  },
+  "critical_notes": [
+    "Qwen3-VL-8B uses stop threshold +2.0, InternVL3-8B uses 0.0 due to different logit scales",
+    "move_composed is a composed adapter - do NOT load foundation + move_composed together",
+    "InternVL3 stop adapter is cumulative and includes foundation",
+    "For vLLM deployment with InternVL3, use stop_merged/ instead of stop/",
+    "MP3D evaluation must use official r018/h0.88 navmesh and mflight2t1q protocol"
+  ]
+}

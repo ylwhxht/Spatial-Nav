@@ -1,0 +1,110 @@
+{
+  "ability_micro_f1": 0.5285907248986943,
+  "ability_per_class_precision": {
+    "layout_topology": 0.5673289183222958,
+    "local_affordance": 0.6659340659340659,
+    "relative_geometry": 0.05934065934065934,
+    "spatial_relation": 0.0,
+    "target_grounding": 0.0
+  },
+  "ability_per_class_recall": {
+    "layout_topology": 0.9961240310077519,
+    "local_affordance": 1.0,
+    "relative_geometry": 1.0,
+    "spatial_relation": 0.0,
+    "target_grounding": 0.0
+  },
+  "ability_predicted_counts": {
+    "layout_topology": 453,
+    "local_affordance": 455,
+    "relative_geometry": 455,
+    "spatial_relation": 2,
+    "target_grounding": 0
+  },
+  "ability_query_gradient_sum": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "ability_target_counts": {
+    "layout_topology": 258,
+    "local_affordance": 303,
+    "relative_geometry": 27,
+    "spatial_relation": 70,
+    "target_grounding": 198
+  },
+  "ability_weight_max": {
+    "layout_topology": 0.2734375,
+    "local_affordance": 0.447265625,
+    "relative_geometry": 0.35546875,
+    "spatial_relation": 0.2255859375,
+    "target_grounding": 0.0
+  },
+  "ability_weight_mean": {
+    "layout_topology": 0.2384508070054945,
+    "local_affordance": 0.4219479739010989,
+    "relative_geometry": 0.33870621565934067,
+    "spatial_relation": 0.0009851476648351648,
+    "target_grounding": 0.0
+  },
+  "ability_weight_min": {
+    "layout_topology": 0.0,
+    "local_affordance": 0.388671875,
+    "relative_geometry": 0.314453125,
+    "spatial_relation": 0.0,
+    "target_grounding": 0.0
+  },
+  "action_accuracy": 0.751953125,
+  "adapter_sha256": "09dd24f6d254848d3c32530ae453574216f11bd84917cd7976e22cca2d255e59",
+  "all_candidate_relation_cosine_mean": 0.0,
+  "all_candidate_relation_items": 0,
+  "all_five_abilities_received_gradient": false,
+  "all_five_relation_decision_adapters_received_gradient": false,
+  "all_five_relation_operators_received_gradient": false,
+  "candidate_evidence_attention_accuracy": 0.369140625,
+  "candidate_evidence_attention_rows": 512,
+  "candidate_local_action_rows": 0,
+  "candidate_local_gold_coverage": 0.0,
+  "candidate_local_gold_rows": 0,
+  "candidate_memory_scale": 0.0,
+  "candidate_relation_cosine_mean": 0.0,
+  "candidate_relation_rows": 0,
+  "candidate_value_scale": 0.0,
+  "full_beats_off_fraction": 0.0,
+  "full_beats_shuffle_fraction": 0.0,
+  "full_differs_from_off_fraction": 0.0,
+  "full_differs_from_shuffle_fraction": 0.0,
+  "full_minus_off_margin_mean": 0.0,
+  "full_minus_shuffle_margin_mean": 0.0,
+  "gain_rows": 282,
+  "gain_rows_full_action_accuracy": 0.7269503546099291,
+  "gain_rows_off_action_accuracy": 0.7269503546099291,
+  "gain_rows_shuffle_action_accuracy": 0.7269503546099291,
+  "global_local_scale": 0.0,
+  "global_step": 1250,
+  "max_residual_ratio": 0.0,
+  "passed_runtime_contract": true,
+  "predicted_ability_count_distribution": {
+    "3": 455
+  },
+  "relation_decision_adapter_gradient_sum": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "relation_operator_gradient_sum": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "residual_gate": 0.0,
+  "rows": 512,
+  "sc_esr_sha256": "71b8213447c9829d05e008877fed4aaf4bd64db8966d532f943e7db19d7b29cd",
+  "state_accuracy": 0.512087912087912
+}

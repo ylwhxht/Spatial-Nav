@@ -1,0 +1,41 @@
+{
+  "b0_applied_exactly_once": true,
+  "base_config_sha256": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+  "base_model": "OpenGVLab/InternVL3-8B-hf@259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "config_sha256": "2ae6994adf688bbb1146b394b35cb665f9f17b1d18cf938da101c2471330bc34",
+  "created_at_unix": 1789331877.1047297,
+  "elapsed_seconds": 102.99120259284973,
+  "merge_dtype": "bfloat16",
+  "passed": true,
+  "safe_merge": true,
+  "schema": "cumulative_b0_stop_vllm_merged_v1",
+  "source_adapter": "checkpoints/internvl3-8b/stop",
+  "source_adapter_alpha": 128,
+  "source_adapter_rank": 64,
+  "source_adapter_sha256": "84b6cac6cdb5a922299624789a450e86cdfca23fb4ef8e4fc27fbf47c1104258",
+  "source_b0_adapter_sha256": "9d9b320932212ba72af522085dcfc1bd97771b328e56d911e8e587b3c41e0b3e",
+  "training_provenance": "REPRODUCTION_MANIFEST.json (internvl3-8b stop component)",
+  "training_provenance_sha256": null,
+  "weights": {
+    "model-00001-of-00005.safetensors": {
+      "bytes": 3945140312,
+      "sha256": "7690a43fc4c284df55925fd1f70bf6122cbfe07e275bfcab525cdb45a8cb86e8"
+    },
+    "model-00002-of-00005.safetensors": {
+      "bytes": 3923472760,
+      "sha256": "d5128ee74231fd03c608e9fb0a4bfdcda8e8c3dea5592eadcc62c9251cd86a29"
+    },
+    "model-00003-of-00005.safetensors": {
+      "bytes": 3864727864,
+      "sha256": "7db527eae49f49610ed9f51bfe478680be6ca051164891b265af37ffd40743e1"
+    },
+    "model-00004-of-00005.safetensors": {
+      "bytes": 3068306168,
+      "sha256": "626d7199ffafb0a98492471f29a8309ab8b7ebf667ee9c7da932610af8dabcdb"
+    },
+    "model-00005-of-00005.safetensors": {
+      "bytes": 1087199376,
+      "sha256": "6814f162cc1ca061db92cb8808c7202876d8c1a56a0e7e856db12b21cba23a28"
+    }
+  }
+}

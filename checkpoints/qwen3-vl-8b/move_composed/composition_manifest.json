@@ -1,0 +1,18 @@
+{
+  "b0_adapter": "checkpoints/qwen3-vl-8b/move_no_kd",
+  "b0_rank": 64,
+  "b0_sha256": "cd5a8093289247d23790a7f1a4f262f84755fa5fe7bb4855c1f9fe54c5a0ccee",
+  "base_weights_merged": false,
+  "composed_rank": 128,
+  "delta_adapter": "checkpoints/qwen3-vl-8b/move_opd",
+  "delta_rank": 64,
+  "delta_scale": 1.0,
+  "delta_sha256": "7718342d1a96b70f77584db285070094d6c455a4c2debb677ea3dc024cd1fd6c",
+  "lora_scale": 2.0,
+  "mathematically_exact_additive_composition": true,
+  "module_pair_count": 252,
+  "native_visual_encoder_transformer_lm_head_preserved": true,
+  "output_sha256": "330f86c3f04e2c92ecca3200528b56d85ab633c7fb0fc1276fce9136b74193e1",
+  "schema": "sc_mrd_exact_additive_lora_composition_v1",
+  "tensor_count": 504
+}

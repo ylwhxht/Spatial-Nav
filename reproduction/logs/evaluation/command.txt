@@ -1,0 +1,13 @@
+# Verified 8-GPU checkpoint evaluation; run once per dataset.
+$TRAIN_PY codes/scripts/evaluate.py \
+  --architecture $ARCH --variant checkpoint --base-model $BASE_MODEL \
+  --dataset $DATASET --scene-root $SCENE_ROOT --objectnav-root $OBJECTNAV_ROOT \
+  --checkpoint-root $CHECKPOINT_ROOT --run-dir $RUN_DIR \
+  --worker-python $SIM_PY --serve-python $SERVE_PY \
+  --move-gpus 0,1,2,3 --stop-gpus 4,5,6,7 \
+  --sim-gpus 0,1,2,3,4,5,6,7 --workers-per-gpu 10 \
+  --allow-shared-server-gpus --gpu-memory-utilization 0.70 \
+  --request-routing historical --max-steps 500 --image-res 1920 \
+  --max-num-seqs 64 --move-max-model-len 3072 --stop-max-model-len 4096 \
+  --worker-gpu-device-id 0 --stop-threshold 2.0
+# InternVL3 uses --stop-threshold 0.0.

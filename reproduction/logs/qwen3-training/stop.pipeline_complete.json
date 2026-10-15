@@ -1,0 +1,65 @@
+{
+  "adapter_training_mode": "direct_b0_adapter_continuation",
+  "continued_b0_adapter_directly": true,
+  "decision_kind": "stop",
+  "delta_adapter_sha256": "b7f6932c6d3f0fb7c99244049a47a995db5560ff15ca7d0a9b6f4f9a0e738ada",
+  "diagnostic": {
+    "counterfactual_margin_pass_rate": 0.0,
+    "counterfactual_rows": 0,
+    "direct_action_accuracy": 0.8984375,
+    "direct_action_ce": 0.2660779708894552,
+    "kd_eligible_coverage": 1.0,
+    "kd_eligible_rows": 256,
+    "paired_rows": 256,
+    "reasoned_action_accuracy": 1.0,
+    "teacher_gold_margin_mean": 3.2197265625
+  },
+  "expected_optimizer_steps": 442,
+  "fixed_b0_sha256": "3ed5a47f47c86bc14315a778726c5b71853383c080769020644cbc8c3d75858e",
+  "global_step": 442,
+  "in_process_training_phases": [
+    {
+      "dev_rows": 256,
+      "global_batch_size": 32,
+      "grad_accum_steps": 4,
+      "kd_warmup_ratio": 0.05,
+      "kd_weight": 0.25,
+      "learning_rate": 1e-06,
+      "max_length": 2048,
+      "micro_limit": 1768,
+      "name": "historical_move_sft",
+      "optimizer_steps": 442,
+      "paired_rows": 9301,
+      "per_device_batch_size": 1,
+      "seed": 20260809,
+      "train_rows": 14125,
+      "warmup_ratio": 0.05,
+      "weight_semantics": "legacy_normalized"
+    }
+  ],
+  "independent_decision_head": false,
+  "native_generation_chain_preserved": true,
+  "objective": "opd",
+  "one_model_load": true,
+  "optimizer_reset_at_phase_boundary": false,
+  "passed": true,
+  "phase_boundaries_optimizer_steps": [
+    442
+  ],
+  "runtime_max_new_tokens": 24,
+  "runtime_view": "direct_only",
+  "schema": "sc_mrd_native_lm_complete_v1",
+  "single_adapter_output": true,
+  "train_diagnostic": {
+    "counterfactual_margin_pass_rate": 0.0,
+    "counterfactual_rows": 0,
+    "direct_action_accuracy": 0.765625,
+    "direct_action_ce": 0.5770935622276738,
+    "kd_eligible_coverage": 1.0,
+    "kd_eligible_rows": 256,
+    "paired_rows": 256,
+    "reasoned_action_accuracy": 1.0,
+    "teacher_gold_margin_mean": 1.31201171875
+  },
+  "trained_adapter_sha256": "b7f6932c6d3f0fb7c99244049a47a995db5560ff15ca7d0a9b6f4f9a0e738ada"
+}

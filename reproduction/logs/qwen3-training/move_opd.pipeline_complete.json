@@ -1,0 +1,65 @@
+{
+  "adapter_training_mode": "frozen_b0_plus_fresh_delta",
+  "continued_b0_adapter_directly": false,
+  "decision_kind": "move",
+  "delta_adapter_sha256": "1d281b7d34915e0e24489a01bfe0f0f2da04e6dd05f0308d285f7df226017f50",
+  "diagnostic": {
+    "counterfactual_margin_pass_rate": 0.0,
+    "counterfactual_rows": 0,
+    "direct_action_accuracy": 0.896551724137931,
+    "direct_action_ce": 0.47032616329218807,
+    "kd_eligible_coverage": 0.8275862068965517,
+    "kd_eligible_rows": 24,
+    "paired_rows": 29,
+    "reasoned_action_accuracy": 1.0,
+    "teacher_gold_margin_mean": 3.3836206896551726
+  },
+  "expected_optimizer_steps": 417,
+  "fixed_b0_sha256": "09dd24f6d254848d3c32530ae453574216f11bd84917cd7976e22cca2d255e59",
+  "global_step": 417,
+  "in_process_training_phases": [
+    {
+      "dev_rows": 256,
+      "global_batch_size": 32,
+      "grad_accum_steps": 4,
+      "kd_warmup_ratio": 0.2,
+      "kd_weight": 0.15,
+      "learning_rate": 5e-07,
+      "max_length": 2048,
+      "micro_limit": 1668,
+      "name": "historical_move_sft",
+      "optimizer_steps": 417,
+      "paired_rows": 1680,
+      "per_device_batch_size": 1,
+      "seed": 20260807,
+      "train_rows": 13317,
+      "warmup_ratio": 0.05,
+      "weight_semantics": "legacy_normalized"
+    }
+  ],
+  "independent_decision_head": false,
+  "native_generation_chain_preserved": true,
+  "objective": "opd",
+  "one_model_load": true,
+  "optimizer_reset_at_phase_boundary": false,
+  "passed": true,
+  "phase_boundaries_optimizer_steps": [
+    417
+  ],
+  "runtime_max_new_tokens": 24,
+  "runtime_view": "direct_only",
+  "schema": "sc_mrd_native_lm_complete_v1",
+  "single_adapter_output": true,
+  "train_diagnostic": {
+    "counterfactual_margin_pass_rate": 0.0,
+    "counterfactual_rows": 0,
+    "direct_action_accuracy": 0.8984375,
+    "direct_action_ce": 0.3812517903152184,
+    "kd_eligible_coverage": 0.7578125,
+    "kd_eligible_rows": 97,
+    "paired_rows": 128,
+    "reasoned_action_accuracy": 1.0,
+    "teacher_gold_margin_mean": 3.2119140625
+  },
+  "trained_adapter_sha256": "1d281b7d34915e0e24489a01bfe0f0f2da04e6dd05f0308d285f7df226017f50"
+}

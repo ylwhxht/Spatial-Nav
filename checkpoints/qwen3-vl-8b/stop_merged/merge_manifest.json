@@ -1,0 +1,41 @@
+{
+  "b0_applied_exactly_once": true,
+  "base_config_sha256": "5cd452860dc1e9c29dd71cc3cef7f39b338b7a40793f7a260655c2d3568f3661",
+  "base_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "config_sha256": "9534cdb388b5ec720b33b8e37f5cf4fcd9d06f16051be16e8e712040212741d3",
+  "created_at_unix": 1787638132.5662816,
+  "elapsed_seconds": 82.06593799591064,
+  "merge_dtype": "bfloat16",
+  "passed": true,
+  "safe_merge": true,
+  "schema": "cumulative_b0_stop_vllm_merged_v1",
+  "source_adapter": "checkpoints/qwen3-vl-8b/stop",
+  "source_adapter_alpha": 128,
+  "source_adapter_rank": 64,
+  "source_adapter_sha256": "6ba37c3d2dc0fc9edd0eaba6a5ecb4b9fd4cf95630b7efc8d8798188f6ee3eb2",
+  "source_b0_adapter_sha256": "b310a127e1095c63f72d461c92b01b0735534005aa4c2125cb52e13b578ffbb0",
+  "training_provenance": "historical-qwen3-formal-r1-stop-pipeline-complete",
+  "training_provenance_sha256": "709db50894734a25eb124705336f1174ab5e2eaba0ee42afe7ae7d2245a920a6",
+  "weights": {
+    "model-00001-of-00005.safetensors": {
+      "bytes": 3991385792,
+      "sha256": "55fe94eaff8c2767decdb14a96190b3611b5d5ff4e54d71866b96ae072c236cc"
+    },
+    "model-00002-of-00005.safetensors": {
+      "bytes": 3993161712,
+      "sha256": "26bb5a89a59a92a1fa433d659fcfc6feab5135964f8cc49b8f759ebbf2134468"
+    },
+    "model-00003-of-00005.safetensors": {
+      "bytes": 3959606432,
+      "sha256": "5f57c50c07e3c515d87d6bf8ca1059f2bd4b342534c7a754ec8bff572ce2048c"
+    },
+    "model-00004-of-00005.safetensors": {
+      "bytes": 3993177648,
+      "sha256": "054bd81ada9c7483b2d8ffc4a021e70ca0c1d8b05d4610ada716c0f8e1ad90e1"
+    },
+    "model-00005-of-00005.safetensors": {
+      "bytes": 1597007880,
+      "sha256": "5e23f8f757e9b537e00ade40843e66a91ff573c4104184083e18bbd0a44e7a6c"
+    }
+  }
+}

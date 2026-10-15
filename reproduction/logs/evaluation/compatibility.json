@@ -1,0 +1,12 @@
+{
+  "recorded_qwen3_evaluation": {
+    "worker_gpu_device_id": -1,
+    "reason": "The recorded host did not provide NVIDIA EGL userspace libraries; simulator workers used CPU/Mesa.",
+    "model_servers": "CUDA GPUs 0-7"
+  },
+  "recorded_internvl3_evaluation": {
+    "worker_gpu_device_id": -1,
+    "reason": "The recorded host did not provide NVIDIA EGL userspace libraries; simulator workers used CPU/Mesa.",
+    "model_servers": "CUDA GPUs 0-7"
+  }
+}

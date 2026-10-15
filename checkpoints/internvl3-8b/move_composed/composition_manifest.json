@@ -1,0 +1,19 @@
+{
+  "b0_adapter": "checkpoints/internvl3-8b/move_no_kd (regenerate with train.py; source not bundled)",
+  "b0_rank": 64,
+  "b0_sha256": "aec705668424cd5e8e51f89617798d4a58eb71bc9872f7a8159ec7c251923733",
+  "base_weights_merged": false,
+  "composed_rank": 128,
+  "delta_adapter": "checkpoints/internvl3-8b/move_opd (regenerate with train.py; source not bundled)",
+  "delta_rank": 64,
+  "delta_scale": 1.0,
+  "delta_sha256": "2d0384015ddad7e7afd008c2d8ee862c08026465f3ae76a1661adb3567f63536",
+  "lora_scale": 2.0,
+  "mathematically_exact_additive_composition": true,
+  "module_pair_count": 196,
+  "native_visual_encoder_transformer_lm_head_preserved": true,
+  "output_sha256": "e55900b38b7e1279fa26eb493f572ffbb69902850e08d29688fc06f1d965fcea",
+  "schema": "sc_mrd_exact_additive_lora_composition_v1",
+  "source_adapters_included": false,
+  "tensor_count": 392
+}

@@ -1,0 +1,23 @@
+{
+  "adaptive_need_gate": true,
+  "candidate_conditioned": true,
+  "candidate_local_masks": false,
+  "candidate_memory_injection": false,
+  "candidate_value_interaction": false,
+  "global_conditioned_local_slots": false,
+  "hidden_size": 4096,
+  "independent_ability_gates": true,
+  "injection_layer": 25,
+  "latent_spatial_rollout": false,
+  "local_evidence_control": false,
+  "max_abilities": 3,
+  "max_residual_scale": 0.02,
+  "min_abilities": 1,
+  "num_states": 2,
+  "relation_semantic_decision_separation": false,
+  "slot_rank": 64,
+  "soft_ability_route": false,
+  "source_layer": 24,
+  "state_dropout": 0.3,
+  "straight_through_sparse_route": false
+}

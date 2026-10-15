@@ -1,0 +1,59 @@
+{
+  "files": [
+    {
+      "bytes": 912,
+      "path": "adapter_config.json",
+      "sha256": "0667f4acc7194e6ac12e0cb44d896f9b6d5e1d14d35fe7177e075cb44157df35"
+    },
+    {
+      "bytes": 1291905008,
+      "path": "adapter_model.safetensors",
+      "sha256": "e55900b38b7e1279fa26eb493f572ffbb69902850e08d29688fc06f1d965fcea"
+    },
+    {
+      "bytes": 811,
+      "path": "added_tokens.json",
+      "sha256": "222d504fd2fb42e08a43b7ef6383a130483d34233f506b6ccc799655de48dff8"
+    },
+    {
+      "bytes": 864,
+      "path": "composition_manifest.json",
+      "sha256": "cf0d4bb17d73ae90798de706dfc0c725739b71799a881a9cfd74de50b27782fb"
+    },
+    {
+      "bytes": 662,
+      "path": "preprocessor_config.json",
+      "sha256": "4b47e61791af154ba0f46b332c97a3077b44e30443b7a2297394da012a52fb7e"
+    },
+    {
+      "bytes": 72,
+      "path": "processor_config.json",
+      "sha256": "3511f4ae65c2fa5c1ab6a0fb2bb2fe767d6f0ee53ba412953b33acc892327c2a"
+    },
+    {
+      "bytes": 877,
+      "path": "special_tokens_map.json",
+      "sha256": "e847a86633f2470a0d9fed41b5a36ff1f4435050929aa80b28c41d28420501b2"
+    },
+    {
+      "bytes": 6903,
+      "path": "tokenizer_config.json",
+      "sha256": "4e0bebcebcdcd7da6125db809c7df6dcdc276395c89a9eae895a38e6c5cbc8c7"
+    },
+    {
+      "bytes": 883,
+      "path": "video_preprocessor_config.json",
+      "sha256": "39095acb945c323abebac385632a224dca538a23d6d9fe119631e20a39339119"
+    },
+    {
+      "bytes": 3383407,
+      "path": "vocab.json",
+      "sha256": "87a257b04b17642a0688c98cd1df89c398bda4fee532d6f88b38a659ecb4ac8d"
+    }
+  ],
+  "filesystem": "nfs",
+  "passed": true,
+  "saved_at": "2026-09-13T19:59:06.537942+00:00",
+  "schema": "durable_training_stage_v1",
+  "stage": "move_composed"
+}
