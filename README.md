@@ -106,6 +106,7 @@ Results are percentages reported as `SR / SPL`:
 | evaluation setting | checkpoint | HM3D-v1 | HM3D-v2 | MP3D |
 |---|---|---:|---:|---:|
 | Retrained checkpoint (8-GPU full training) | Qwen3-VL-8B | 60.25 / 30.47 | 76.80 / 34.86 | 48.43 / 20.47 |
+| Pretrained checkpoint (loaded directly) | Qwen3-VL-8B | 60.20 / 30.73 | 77.40 / 36.07 | 47.74 / 20.71 |
 | Pretrained checkpoint (loaded directly) | InternVL3-8B | 57.80 / 31.22 | 72.40 / 34.66 | 42.23 / 19.53 |
 
 ## Repository layout
