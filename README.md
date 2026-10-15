@@ -16,7 +16,7 @@ Spatial-Nav studies how spatial supervision transfers from vision-language bench
 
 ## Quick Start
 
-The training data is released as Spatial-Nav-100K (about 100K spatial instruction examples). Evaluation uses the HM3D-v1, HM3D-v2, and MP3D navigation sets. Scene files, object-navigation annotations, navigation meshes, base-model weights, and training images are downloaded separately because of their size or license.
+The training data is released as Spatial-Nav-100K (about 100K spatial instruction examples). Evaluation uses HM3D v0.1, HM3D v0.2, and MP3D navigation assets. In the commands below, these HM3D releases are addressed as `hm3d_v1` and `hm3d_v2`. Scene files, object-navigation annotations, navigation meshes, base-model weights, and training images are downloaded separately because of their size or license.
 
 The commands below assume a Linux x86-64 machine with eight visible GPUs.
 
@@ -36,7 +36,15 @@ export SPATIAL_NAV_CHECKPOINT_REPO=hx24/spatial-nav-models
 bash tools/download_hf_assets.sh
 ```
 
-For evaluation, also place the licensed HM3D-v1, HM3D-v2, or MP3D scene/objectnav assets at local paths. MP3D additionally needs its validation navigation meshes.
+For evaluation, download the licensed scene and task files from the official sources below, then pass their local paths to the evaluation command. This repository does not redistribute these assets.
+
+| evaluation assets | official download instructions |
+|---|---|
+| HM3D v0.1 (`hm3d_v1`) | [HM3D v0.1 release files](https://github.com/matterport/habitat-matterport-3dresearch) · [Habitat-Sim HM3D instructions](https://github.com/facebookresearch/habitat-sim/blob/main/DATASETS.md#habitat-matterport-3d-research-dataset-hm3d) |
+| HM3D v0.2 (`hm3d_v2`) | [HM3D v0.2 release files](https://github.com/matterport/habitat-matterport-3dresearch) · [Habitat-Sim HM3D instructions](https://github.com/facebookresearch/habitat-sim/blob/main/DATASETS.md#habitat-matterport-3d-research-dataset-hm3d) |
+| MP3D | [official Matterport3D page](https://niessner.github.io/Matterport/) · [Habitat-Sim MP3D instructions](https://github.com/facebookresearch/habitat-sim/blob/main/DATASETS.md#matterport3d-mp3d-dataset) |
+
+HM3D and MP3D access is subject to the original license terms and may require registration or an API token. MP3D evaluation also needs the validation navigation meshes.
 
 ### 2. Create the environments
 
