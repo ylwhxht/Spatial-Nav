@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env
+
+# Data and local experiment outputs are installed/generated separately.
+/datasets/
+/runs/
+/results/
+/logs/
+/eval_logs/
+
+# Checkpoint metadata may be tracked; publish large weights as a model release.
+/checkpoints/**/*.safetensors
+/checkpoints/**/*.bin
+/checkpoints/**/*.pt
+/checkpoints/**/*.pth
+/checkpoints/**/optimizer*
+/checkpoints/**/training_state*
+
+.cache/
+.pytest_cache/
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store

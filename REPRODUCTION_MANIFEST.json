@@ -1,0 +1,42 @@
+{
+  "schema": "spatial-nav-reproduction-manifest/v2",
+  "training": {
+    "architecture": "qwen3-vl-8b",
+    "gpus": 8,
+    "gpu_ids": [0, 1, 2, 3, 4, 5, 6, 7],
+    "entrypoint": "codes/scripts/train.py",
+    "stages": ["foundation", "move_no_kd", "move_opd", "compose", "stop", "merge_stop"],
+    "base_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b"
+  },
+  "evaluation": {
+    "entrypoint": "codes/scripts/evaluate.py",
+    "variant": "checkpoint",
+    "move_gpus": [0, 1, 2, 3],
+    "stop_gpus": [4, 5, 6, 7],
+    "sim_gpus": [0, 1, 2, 3, 4, 5, 6, 7],
+    "workers_per_gpu": 10,
+    "one_model_server_per_gpu": true,
+    "gpu_memory_utilization": 0.7,
+    "request_routing": "historical",
+    "max_steps": 500,
+    "episodes": {"hm3d_v1": 2000, "hm3d_v2": 1000, "mp3d": 2195}
+  },
+  "base_models": {
+    "qwen3-vl-8b": {"revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b"},
+    "internvl3-8b": {"revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af"}
+  },
+  "results": {
+    "qwen3-vl-8b": {
+      "source": "fresh_qwen3_8gpu_training_output",
+      "hm3d_v1": {"sr_percent": 60.25, "spl_percent": 30.47},
+      "hm3d_v2": {"sr_percent": 76.8, "spl_percent": 34.86},
+      "mp3d": {"sr_percent": 48.43, "spl_percent": 20.47}
+    },
+    "internvl3-8b": {
+      "source": "published_checkpoint",
+      "hm3d_v1": {"sr_percent": 57.8, "spl_percent": 31.22},
+      "hm3d_v2": {"sr_percent": 72.4, "spl_percent": 34.66},
+      "mp3d": {"sr_percent": 42.23, "spl_percent": 19.53}
+    }
+  }
+}
