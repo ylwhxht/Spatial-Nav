@@ -1,14 +1,16 @@
-﻿# Spatial-Nav
-
-<div align="center">
-  <img src="figures/teaser.png" width="900" alt="Spatial-Nav overview" />
-</div>
+﻿# Beyond Spatial Benchmarks: From Spatial Reasoning to Navigation
 
 <div align="center">
 
 [![Paper](https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv)](https://arxiv.org/abs/2609.29934) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface)](https://huggingface.co/datasets/hx24/spatial-nav-100k-dataset) [![Models](https://img.shields.io/badge/Models-HuggingFace-yellow?logo=huggingface)](https://huggingface.co/hx24/spatial-nav-models)
 
 </div>
+
+<div align="center">
+  <img src="figures/teaser.png" width="900" alt="Spatial-Nav overview" />
+</div>
+
+
 
 Spatial-Nav studies how spatial supervision transfers from vision-language benchmarks to embodied navigation. The release contains the Spatial-Nav-100K data interface, the Qwen3-VL-8B end-to-end training chain, and the checkpoint evaluator for Qwen3-VL-8B and InternVL3-8B.
 
@@ -104,7 +106,7 @@ The released full-split results are percentages (`SR / SPL`):
 | Qwen3-VL-8B, fresh 8-GPU training | 60.25 / 30.47 | 76.80 / 34.86 | 48.43 / 20.47 |
 | InternVL3-8B, published checkpoint | 57.80 / 31.22 | 72.40 / 34.66 | 42.23 / 19.53 |
 
-The corresponding logs and JSON metrics are under `reproduction/`. Checkpoint provenance and SHA-256 records are in [CHECKPOINTS.md](CHECKPOINTS.md).
+The corresponding logs and JSON metrics are under `reproduction/`. Checkpoint provenance is in [CHECKPOINTS.md](CHECKPOINTS.md).
 
 ## Repository layout
 
