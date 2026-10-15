@@ -1,4 +1,4 @@
-# Beyond Spatial Benchmarks: From Spatial Reasoning to Navigation
+## Beyond Spatial Benchmarks: From Spatial Reasoning to Navigation
 
 <div align="center">
 
