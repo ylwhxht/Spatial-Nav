@@ -13,9 +13,15 @@ Large binary assets are deliberately kept outside this Git repository:
 - trained adapters and merged checkpoints;
 - full per-episode logs.
 
-The anonymous dataset and model artifact identifiers are supplied separately
-with the review package. They are intentionally not hard-coded here because
-the repository must not disclose an author account or a non-anonymous mirror.
+The external assets are available through anonymous read-only mirrors:
+
+- training dataset: [https://anonymous-hf.com/a/qw045c5e6efg/](https://anonymous-hf.com/a/qw045c5e6efg/)
+- base-model bundle: [https://anonymous-hf.com/a/yd05u6f8p76h/](https://anonymous-hf.com/a/yd05u6f8p76h/)
+
+The public paths expose only anonymous identifiers. The model bundle contains
+the pinned Qwen3-VL-8B and InternVL3-8B base weights; the trained Move/Stop
+checkpoint components listed in CHECKPOINTS.md are produced by the staged
+training run or supplied as a separate checkpoint bundle.
 
 ## Quick start
 
@@ -29,24 +35,25 @@ environment/:
     export SIM_PY="$NAV_CACHE/envs/sim/bin/python"
     export SERVE_PY="$NAV_CACHE/envs/serve/bin/python"
 
-Obtain the anonymous dataset and checkpoint artifact identifiers from the
-review package, then set:
+Download the anonymous dataset and base-model bundle, then set the local
+paths used by training and evaluation:
 
-    export SPATIAL_NAV_DATASET_ID=ANONYMOUS_ACCOUNT/ANONYMOUS_DATASET
-    export SPATIAL_NAV_CHECKPOINT_REPO=ANONYMOUS_ACCOUNT/ANONYMOUS_MODELS
     export SPATIAL_NAV_DATA_ROOT="$NAV_CACHE/datasets"
     export SPATIAL_NAV_MODEL_ROOT="$NAV_CACHE/models"
     export SPATIAL_NAV_CHECKPOINT_ROOT="$NAV_CACHE/checkpoints"
-    tools/download_hf_assets.sh
+    tools/download_anonymous_assets.sh
 
-The download helper requires explicit asset identifiers and never embeds an
-author account. It verifies the data contract before training.
+The anonymous helper uses the two public proxy URLs in
+ANONYMOUS_ARTIFACTS.md and requires no account token. It verifies the expected
+manifest and base-model configuration files. Checkpoint directories are
+created by training or supplied separately.
 
 ## Reproduction entry points
 
 - codes/scripts/train.py runs the staged Qwen3-VL training chain.
 - codes/scripts/evaluate.py runs checkpoint evaluation.
-- tools/download_hf_assets.sh obtains the external assets.
+- tools/download_anonymous_assets.sh obtains the anonymous data and base models.
+- tools/download_hf_assets.sh supports a separately supplied complete checkpoint bundle.
 - REPRODUCTION.md describes the tested command structure.
 - CHECKPOINTS.md lists architecture, revision, path, and checksum metadata.
 - tests/ contains protocol and configuration checks.

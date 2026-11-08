@@ -1,7 +1,10 @@
 # Anonymous checkpoint inventory
 
 The paths below are relative to the external checkpoint bundle. The Git
-repository intentionally contains no large model files.
+repository intentionally contains no large model files. The anonymous base
+weights are available at [https://anonymous-hf.com/a/yd05u6f8p76h/](https://anonymous-hf.com/a/yd05u6f8p76h/); that mirror contains the two base
+model directories and does not claim to contain the trained checkpoint
+components listed below.
 
 | Architecture | Base model | Revision | Default Stop threshold |
 |---|---|---|---:|
