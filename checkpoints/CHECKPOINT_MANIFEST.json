@@ -1,0 +1,46 @@
+{
+  "version": "anonymous-release-v1",
+  "anonymous": true,
+  "description": "Checkpoint inventory for the anonymous Spatial-Nav reproducibility release",
+  "asset_identifiers": {
+    "dataset": "provided separately with the review package",
+    "checkpoints": "provided separately with the review package"
+  },
+  "base_models": {
+    "qwen3-vl-8b": {
+      "name": "Qwen/Qwen3-VL-8B-Instruct",
+      "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b"
+    },
+    "internvl3-8b": {
+      "name": "OpenGVLab/InternVL3-8B-hf",
+      "revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af"
+    }
+  },
+  "components": {
+    "qwen3-vl-8b": [
+      "foundation",
+      "move_no_kd",
+      "move_opd",
+      "move_composed",
+      "stop",
+      "stop_merged"
+    ],
+    "internvl3-8b": [
+      "foundation",
+      "move_composed",
+      "stop",
+      "stop_merged"
+    ]
+  },
+  "evaluation": {
+    "episodes": {
+      "hm3d_v1": 2000,
+      "hm3d_v2": 1000,
+      "mp3d": 2195
+    },
+    "stop_threshold": {
+      "qwen3-vl-8b": 2.0,
+      "internvl3-8b": 0.0
+    }
+  }
+}

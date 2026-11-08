@@ -1,0 +1,7 @@
+name: spatial-nav-train
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10.22
+  - pip=25.2

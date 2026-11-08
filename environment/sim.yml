@@ -1,0 +1,11 @@
+name: spatial-nav-sim
+channels:
+  - aihabitat
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - cmake=3.14
+  - habitat-sim=0.2.5=py3.9_linux_c8887c8cf421b6df2d77489d42f4e20488e184eb
+  - habitat-sim-mutex=1.0=display_nobullet
+  - pip=25.2

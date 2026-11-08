@@ -1,0 +1,15 @@
+# Install into the Python 3.9 Habitat-Sim worker environment, after conda Habitat-Sim.
+# Install the CUDA-matched PyTorch wheel separately; see ENVIRONMENT.md.
+Pillow==11.3.0
+imageio-ffmpeg>=0.6,<1
+numpy==1.23.5
+PyYAML==6.0.3
+pandas==1.5.3
+requests==2.28.1
+opencv-python-headless==4.11.0.86
+matplotlib==3.7.2
+numpy-quaternion==2023.0.4
+numba==0.58.1
+scipy==1.11.4
+openai==1.35.3
+httpx==0.27.2
