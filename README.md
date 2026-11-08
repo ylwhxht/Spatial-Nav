@@ -1,8 +1,8 @@
-## Beyond Spatial Benchmarks: From Spatial Reasoning to Navigation
+# Spatial-Nav: Anonymous Reproducibility Release
 
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv)](https://arxiv.org/abs/2609.29934) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-purple?logo=huggingface)](https://huggingface.co/datasets/hx24/spatial-nav-100k-dataset) [![Models](https://img.shields.io/badge/Models-HuggingFace-blue?logo=huggingface)](https://huggingface.co/hx24/spatial-nav-models)
+[![Dataset](https://img.shields.io/badge/Dataset-Anonymous-purple)](https://anonymous-hf.com/a/qw045c5e6efg/) [![Models](https://img.shields.io/badge/Models-Anonymous-blue)](https://anonymous-hf.com/a/yd05u6f8p76h/)
 
 </div>
 
@@ -30,10 +30,10 @@ export NAV_RESULTS=/path/to/spatial-nav-results
 export SPATIAL_NAV_DATA_ROOT="$NAV_CACHE/datasets"
 export SPATIAL_NAV_MODEL_ROOT="$NAV_CACHE/models"
 export SPATIAL_NAV_CHECKPOINT_ROOT="$NAV_CACHE/checkpoints"
-export SPATIAL_NAV_DATASET_ID=hx24/spatial-nav-100k-dataset
-export SPATIAL_NAV_CHECKPOINT_REPO=hx24/spatial-nav-models
+export SPATIAL_NAV_DATASET_URL=https://anonymous-hf.com/a/qw045c5e6efg/
+export SPATIAL_NAV_MODEL_URL=https://anonymous-hf.com/a/yd05u6f8p76h/
 
-bash tools/download_hf_assets.sh
+bash tools/download_anonymous_assets.sh
 ```
 
 For evaluation, download the licensed scene and task files from the official sources below, then pass their local paths to the evaluation command. This repository does not redistribute these assets.
@@ -129,16 +129,3 @@ Results are percentages reported as `SR / SPL`:
 ## Other instructions
 
 See [README_CN.md](README_CN.md) for a concise Chinese entry point. For detailed phase settings, observed training/evaluation time, output files, and reproduction results, see [REPRODUCTION.md](REPRODUCTION.md).
-
-## Citation
-
-```bibtex
-@article{huang2026spatialnav,
-  title   = {Beyond Spatial Benchmarks: From Spatial Reasoning to Navigation},
-  author  = {Huang, Xun and Zhao, Shijia and Qu, Rongsheng and Li, Jiayuan and Lu, Xin and Li, Weixin and Wen, Chenglu and Wang, Cheng},
-  journal = {arXiv preprint arXiv:2609.29934},
-  year    = {2026}
-}
-```
-
-

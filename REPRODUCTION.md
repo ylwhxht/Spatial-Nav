@@ -10,7 +10,7 @@ This guide records the exact Qwen3-VL-8B training run and the Qwen3/InternVL3 ch
 - Evaluation splits: HM3D-v1 (2,000 episodes), HM3D-v2 (1,000 episodes), and MP3D (2,195 episodes).
 - The scene/objectnav assets and base-model weights are downloaded separately. MP3D also requires the validation navigation meshes.
 
-The public assets are [hx24/spatial-nav-100k-dataset](https://huggingface.co/datasets/hx24/spatial-nav-100k-dataset) and [hx24/spatial-nav-models](https://huggingface.co/hx24/spatial-nav-models).
+The public assets are available from anonymous read-only mirrors: [training dataset](https://anonymous-hf.com/a/qw045c5e6efg/) and [base-model bundle](https://anonymous-hf.com/a/yd05u6f8p76h/).
 
 ## 2. Environment setup
 
@@ -38,13 +38,13 @@ The observed run used the following stack:
 The corresponding package files are `requirements-train.txt`, `requirements-serve.txt`, `requirements-eval.txt`, and `environment/*.yml`. Download and verify the data bundle before training:
 
 ```bash
-export SPATIAL_NAV_DATASET_ID=hx24/spatial-nav-100k-dataset
-export SPATIAL_NAV_CHECKPOINT_REPO=hx24/spatial-nav-models
+export SPATIAL_NAV_DATASET_URL=https://anonymous-hf.com/a/qw045c5e6efg/
+export SPATIAL_NAV_MODEL_URL=https://anonymous-hf.com/a/yd05u6f8p76h/
 export SPATIAL_NAV_DATA_ROOT="$NAV_CACHE/datasets"
 export SPATIAL_NAV_MODEL_ROOT="$NAV_CACHE/models"
 export SPATIAL_NAV_CHECKPOINT_ROOT="$NAV_CACHE/checkpoints"
 
-bash tools/download_hf_assets.sh
+bash tools/download_anonymous_assets.sh
 "$TRAIN_PY" codes/scripts/train.py --data "$SPATIAL_NAV_DATA_ROOT" --verify-only
 ```
 

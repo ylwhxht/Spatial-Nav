@@ -1,6 +1,6 @@
 ﻿# Spatial-Nav-100K
 
-[![模型：Hugging Face](https://img.shields.io/badge/Model-HuggingFace-yellow?logo=huggingface)](https://huggingface.co/hx24/spatial-nav-models) [![数据集：Hugging Face](https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface)](https://huggingface.co/datasets/hx24/spatial-nav-100k-dataset)
+[![模型：Anonymous](https://img.shields.io/badge/Model-Anonymous-yellow)](https://anonymous-hf.com/a/yd05u6f8p76h/) [![数据集：Anonymous](https://img.shields.io/badge/Dataset-Anonymous-yellow)](https://anonymous-hf.com/a/qw045c5e6efg/)
 
 本仓库提供 Spatial-Nav-100K 的开源复现代码、数据校验和 checkpoint 评估入口，包含 Qwen3-VL-8B 的完整训练链，以及 Qwen3-VL-8B / InternVL3-8B 的评估链。
 
