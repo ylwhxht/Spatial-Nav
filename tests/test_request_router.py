@@ -52,7 +52,7 @@ class RequestRouterTest(unittest.TestCase):
             return response.read(), response.headers["X-Router-Backend"]
 
     def test_ordering_matches_historical_policy(self):
-        state = router.RouterState(["http://127.0.0.1:9002/v1", "http://127.0.0.1:9001/v1"], 1)
+        state = router.RouterState(["http://localhost:PORT/v1", "http://localhost:PORT/v1"], 1)
         first, second = sorted(state.backends)
         self.assertEqual(state.ordered_backends(), [first, second])
         state.acquire(first)
